@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Droptext</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="h-screen bg-slate-900 text-slate-200">
+    <main class="h-full max-w-4xl mx-auto pb-20 pt-10 px-8 box-border flex flex-col">
+      <header class="font-bold mb-8 uppercase">
+        <%= link_to "📝 droptext.ru", root_path %>
+      </header>
+      <%= yield %>
+    </main>
+  </body>
+</html>

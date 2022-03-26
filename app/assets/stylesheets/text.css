@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'PT Mono';
+  src: url('pt_mono_regular.ttf');
+}
+
+body {
+  font-family: 'Tahoma', sans-serif;
+}
+
+.font-mono {
+  font-family: 'PT Mono', monospace;
+}
