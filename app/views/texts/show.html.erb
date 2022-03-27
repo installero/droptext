@@ -1,3 +1,10 @@
-<div class="h-full box-border px-5 py-3 font-mono bg-slate-700">
-  <div><%= text_for_display(@text.body) %></div>
+<div class="relative flex h-full group">
+  <span class="absolute top-3 right-5">
+    <%= link_to "Простым текстом", {format: 'text'},
+      class: 'btn btn-amber opacity-25 group-hover:opacity-75' %>
+  </span>
+
+  <div class="grow px-5 py-3 font-mono bg-slate-700">
+    <div><%= text_for_display(@text.body) %></div>
+  </div>
 </div>
