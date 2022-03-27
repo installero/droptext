@@ -4,7 +4,7 @@
       class: 'btn btn-amber opacity-25 group-hover:opacity-75' %>
   </span>
 
-  <div class="grow px-5 py-3 font-mono bg-slate-700">
-    <div class="whitespace-pre-wrap"><%= text_for_display(@text.body) %></div>
+  <div class="grow px-5 py-3 bg-slate-700">
+    <pre><code class="whitespace-pre-wrap"><%= h(@text.body) %></code></pre>
   </div>
 </div>

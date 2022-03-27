@@ -7,6 +7,6 @@ body {
   font-family: 'Tahoma', sans-serif;
 }
 
-.font-mono {
+code, .font-mono {
   font-family: 'PT Mono', monospace;
 }
