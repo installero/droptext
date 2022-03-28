@@ -1,6 +1,6 @@
 module ApplicationHelper
   OG_META_TAGS = {
-    title: 'Droptext — закинь текст, отправвь ссылку',
+    title: 'Droptext — закинь текст, отправь ссылку',
     site_name: 'Droptext',
     description: 'Площадка для публикации снипетов'
   }
