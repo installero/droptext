@@ -16,3 +16,5 @@ threads 1,2
 activate_control_app "unix://#{APP_PATH}/pumactl.sock"
 
 prune_bundler
+
+plugin :tmp_restart
