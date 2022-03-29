@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'texts#new'
+  root to: 'snippets#new'
 
-  resources :texts, only: %i[create show], param: :token
+  get '/text/:token', to: redirect('/t/%{token}')
+  resources :t, only: %i[create show], param: :token, controller: :snippets, as: :snippets
 end
