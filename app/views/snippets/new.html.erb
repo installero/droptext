@@ -4,6 +4,7 @@
   <%= form_with model: @snippet, class: 'grow flex flex-col',
     data: {turbo: false} do |form| %>
     <%= form.text_area :body,
+      required: true,
       class: 'block w-full px-3 py-1.5 border border-solid border-gray-700
       bg-slate-700 focus:text-slate-100 focus:bg-slate-800
       font-mono focus:border-gray-800 focus:outline-none transition duration-150
