@@ -1,7 +1,7 @@
 <div class="flex flex-col h-full">
   <h1 class="text-2xl mb-4">Напиши здесь что-нибудь</h1>
 
-  <%= form_with model: @text, class: 'grow flex flex-col',
+  <%= form_with model: @snippet, class: 'grow flex flex-col',
     data: {turbo: false} do |form| %>
     <%= form.text_area :body,
       class: 'block w-full px-3 py-1.5 border border-solid border-gray-700
