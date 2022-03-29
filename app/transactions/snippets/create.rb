@@ -16,11 +16,7 @@ module Snippets
     end
 
     def persist(input)
-      snippet =
-        Snippet.create!(token: generate_token).tap do |snippet|
-          snippet.attributes = input[:params]
-          snippet.save
-        end
+      snippet = Snippet.create!(token: generate_token, **input[:params])
 
       Success(snippet: snippet)
     rescue ActiveRecord::RecordNotUnique
