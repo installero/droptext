@@ -1,22 +1,22 @@
 class Text < ApplicationRecord
-  TOKEN_LENGHT = 3
+  URL_LENGHT = 3
 
-  before_create :set_token
+  before_create :set_url
 
   def to_param
-    token
+    url
   end
 
   private
 
-  def set_token
-    self.token = generate_token
+  def set_url
+    self.url = generate_url
   end
 
-  def generate_token
+  def generate_url
     loop do
-      token = SecureRandom.alphanumeric(TOKEN_LENGHT)
-      break token unless Text.exists?(token: token)
+      url = SecureRandom.alphanumeric(URL_LENGHT)
+      break url unless Text.exists?(url: url)
     end
   end
 end

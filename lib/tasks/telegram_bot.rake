@@ -24,7 +24,7 @@ namespace :telegram_bot do
     message = ["Последние опубликованные снипеты:"]
 
     message += texts.map do |text|
-      "#{url_base}/#{text.token}\n#{text.body}"
+      "#{url_base}/#{text.url}\n#{text.body}"
     end
 
     message.join("\n" * 2)

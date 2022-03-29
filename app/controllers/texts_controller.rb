@@ -10,7 +10,7 @@ class TextsController < ApplicationController
   end
 
   def show
-    @text = Text.find_by!(token: params[:token])
+    @text = Text.find_by!(url: params[:url])
   end
 
   private
