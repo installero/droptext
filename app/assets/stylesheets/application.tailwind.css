@@ -21,3 +21,10 @@
   @apply focus:bg-amber-700 focus:shadow-lg;
   @apply active:bg-amber-800 active:shadow-lg;
 }
+
+.btn-red {
+  @apply bg-red-600 text-white text-xs shadow-md;
+  @apply hover:bg-red-700 hover:shadow-lg;
+  @apply focus:bg-red-700 focus:shadow-lg;
+  @apply active:bg-red-800 active:shadow-lg;
+}
