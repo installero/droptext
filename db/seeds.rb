@@ -1,5 +1,11 @@
-readme_path = Rails.root.join('README.md')
+pages = {
+  'README.md' => 'about',
+  'disclamer.md' => 'disclamer'
+}
 
-content = File.read(readme_path)
-
-Snippet.create!(body: content, token: 'about')
+pages.each do |filename, token|
+  file_path = Rails.root.join(filename)
+  content = File.read(file_path)
+  snippet = Snippet.find_or_create_by!(token: token)
+  snippet.update(body: content)
+end
