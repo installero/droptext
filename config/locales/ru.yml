@@ -1,0 +1,7 @@
+ru:
+  dry_schema:
+    errors:
+      snippet:
+        rules:
+          body:
+            filled?: Сниппет не может быть пустым
