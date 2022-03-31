@@ -21,7 +21,7 @@ export default class extends Controller {
     const token = json.token
 
     if (unsafe_words && !token) {
-      document.querySelector('#unsafe-words').innerHTML = unsafe_words
+      document.querySelector('#unsafe-words').innerHTML = unsafe_words[0]
       this.toggleUnsafeConfirmModal()
     }
 
