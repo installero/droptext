@@ -1,13 +1,16 @@
 class SnippetsController < ApplicationController
   def create
-    Snippets::Create.(params: snippet_params.to_h) do |m|
-      m.failure :validate do |result|
-        redirect_to root_path
+    Snippets::Create.(params: params.permit!.to_h) do |m|
+      m.failure :validate do |validation_errors|
+        render json: validation_errors
       end
 
-      m.success do |result|
-        snippet = result[:snippet]
-        redirect_to snippet_path(snippet.token)
+      m.failure :check_unsafe_words do |unsafe_words|
+        render json: unsafe_words
+      end
+
+      m.success do |token|
+        render json: token
       end
     end
   end
@@ -18,11 +21,5 @@ class SnippetsController < ApplicationController
 
   def show
     @snippet = Snippet.find_by!(token: params[:token])
-  end
-
-  private
-
-  def snippet_params
-    params.require(:snippet).permit(:body)
   end
 end
