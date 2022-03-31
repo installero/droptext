@@ -1,5 +1,5 @@
 <div class="flex flex-col h-full">
-  <h1 class="text-2xl mb-4">Напиши здесь что-нибудь</h1>
+  <h1 class="text-2xl mb-4"><%= t('.write_something')%></h1>
 
   <%= form_with model: @snippet, class: 'grow flex flex-col', id: :snippet_form,
     data: {turbo: false} do |form| %>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="mt-5" data-controller="snippets">
-    <button class="btn btn-emerald" type="button" data-action="click->snippets#submitForm">Сохранить</button>
+    <button class="btn btn-emerald" type="button" data-action="click->snippets#submitForm"><%= t('.save')%></button>
   </div>
 
   <%= render 'unsafe_confirm_modal' %>
