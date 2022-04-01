@@ -1,11 +1,11 @@
 import '@hotwired/turbo-rails'
 import './controllers'
 
-import { HighlightJS } from 'highlight.js'
+import { hljs } from './lib/hljs'
 import ClipboardJS from 'clipboard'
 
 document.addEventListener('turbo:load', (event) => {
-  HighlightJS.highlightAll();
+  hljs.highlightAll()
 
   new ClipboardJS('.js-clipboard', {
     text: function(trigger) {
