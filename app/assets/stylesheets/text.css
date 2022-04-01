@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'PT Mono';
-  src: url('pt_mono_regular.ttf');
+  src: url('pt_mono_regular.woff');
+  font-display: swap;
 }
 
 body {
