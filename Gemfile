@@ -7,7 +7,6 @@ gem 'bootsnap', require: false
 gem 'dotenv'
 gem 'dry-transaction', '~> 0.13.3'
 gem 'dry-validation', '~> 1.8'
-gem 'importmap-rails'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
