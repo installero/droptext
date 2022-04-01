@@ -1,13 +1,14 @@
 <div class="unsafe-modal-confirm">
   <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="unsafe-modal-confirm">
-    <div class="relative w-auto my-6 mx-auto max-w-sm">
-      <div class="border-0 shadow-lg relative flex flex-col w-full bg-slate-900 outline-none focus:outline-none">
+    <div class="relative w-auto max-w-lg my-6 mx-auto">
+      <div class="border-0 shadow-lg relative flex flex-col w-full bg-slate-900 outline-none focus:outline-none p-6">
 
-        <div class="relative p-6 flex-auto select-none">
-          <%== t('.warning') %>
+        <div class="relative flex-auto select-none text-sm">
+          <% unsafe_word_tag = content_tag('span', '', id: 'unsafe-words', class: 'font-bold') %>
+          <%== t('.warning', span_tag: unsafe_word_tag) %>
         </div>
 
-        <div class="flex items-center justify-begin p-6 border-solid border-slate-200 rounded-b" data-controller="snippets">
+        <div class="flex items-center justify-begin mt-5 border-solid border-slate-200 rounded-b" data-controller="snippets">
           <button class="btn btn-red mr-2" type="button" data-action="snippets#toggleUnsafeConfirmModal">
             <%= t('.close')%>
           </button>
@@ -18,5 +19,6 @@
       </div>
     </div>
   </div>
+
   <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="unsafe-modal-backdrop"></div>
 </div>
