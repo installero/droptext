@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_29_085331) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_06_193434) do
   create_table "snippets", force: :cascade do |t|
     t.string "body"
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "markdown", default: "auto", null: false
     t.index ["token"], name: "index_snippets_on_token", unique: true
   end
 
