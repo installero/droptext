@@ -2,6 +2,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
+    "choices.js": "^10.1.0",
     "clipboard": "^2.0.10",
     "highlight.js": "^11.5.0",
     "webpack": "^5.70.0",
