@@ -1,4 +1,65 @@
 ru:
+  activerecord:
+    enums:
+      snippet:
+        markdowns:
+          apache: Apache
+          auto: Автоматическое определение языка
+          bash: Bash
+          c: C
+          coffeescript: CoffeeScript
+          cpp: C++
+          crystal: Crystal
+          csharp: C#
+          csp: CSP
+          css: CSS
+          dart: Dart
+          diff: Diff
+          django: Django
+          dockerfile: Dockerfile
+          elixir: Elixir
+          elm: Elm
+          erb: ERB
+          erlang: Erlang
+          go: Go
+          gradle: Gradle
+          graphql: GraphQL
+          groovy: Groovy
+          haml: HAML
+          haskell: Haskell
+          ini: ini, TOML
+          java: Java
+          javascript: Javascript
+          json: JSON
+          kotlin: Kotlin
+          less: Less
+          lisp: Lisp
+          lua: Lua
+          makefile: Makefile
+          markdown: Markdown
+          matlab: Matlab
+          nginx: nginx
+          nix: nix
+          objectivec: Objective-C
+          perl: Perl
+          pgsql: pgSQL
+          php: PHP
+          plaintext: Простой текст
+          properties: properties
+          protobuf: Protobuf
+          python: Python
+          r: R
+          ruby: Ruby
+          scala: Scala
+          scheme: Scheme
+          scss: SCSS
+          shell: Shell
+          smalltalk: Smalltalk
+          sql: SQL
+          swift: Swift
+          typescript: TypeScript
+          vim: Vim
+          yaml: YAML
   dry_schema:
     errors:
       snippet:
@@ -7,6 +68,8 @@ ru:
             filled?: Сниппет не может быть пустым
   snippets:
     new:
+      item_select: Нажмите для выбора
+      no_results: Ничего не найдено
       save: Сохранить
       write_something: Напиши здесь что-нибудь
     unsafe_confirm_modal:
