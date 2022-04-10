@@ -3,4 +3,5 @@ SnippetSchema = Dry::Schema.Params do
   config.messages.namespace = :snippet
 
   required(:body).filled
+  required(:markdown).filled
 end
