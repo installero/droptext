@@ -24,8 +24,8 @@
       </div>
 
       <footer class="text-slate-700 pt-6 pb-10 text-sm flex justify-between">
-        <%= link_to "Что это?", snippet_path(token: 'about') %>
-        <%= link_to "Дисклеймер", snippet_path(token: 'disclamer') %>
+        <%= link_to t('.about'), snippet_path(token: 'about') %>
+        <%= link_to t('.disclaimer'), snippet_path(token: 'disclamer') %>
         <span>© 2022</span>
       </footer>
     </main>
