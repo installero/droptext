@@ -1,6 +1,7 @@
 /*
  *= require_tree .
  *= require_self
+ *= require choices.js/public/assets/styles/choices.min.css
  */
 
 textarea {

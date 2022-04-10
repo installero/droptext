@@ -28,3 +28,12 @@
   @apply focus:bg-red-700 focus:shadow-lg;
   @apply active:bg-red-800 active:shadow-lg;
 }
+
+.choices {
+  @apply text-slate-700;
+}
+
+.choices__inner,
+.choices__list {
+  @apply bg-slate-900 rounded-none;
+}
