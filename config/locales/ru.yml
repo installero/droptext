@@ -66,12 +66,19 @@ ru:
         rules:
           body:
             filled?: Сниппет не может быть пустым
+  layouts:
+    application:
+      about: Что это?
+      disclaimer: Дисклеймер
   snippets:
     new:
       item_select: Нажмите для выбора
       no_results: Ничего не найдено
       save: Сохранить
       write_something: Напиши здесь что-нибудь
+    show:
+      raw: Простым текстом
+      copy_url: Скопировать ссылку на эту страницу
     unsafe_confirm_modal:
       close: Закрыть
       publish: Опубликовать

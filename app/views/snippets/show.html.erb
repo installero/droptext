@@ -1,10 +1,10 @@
 <div class="relative flex h-full group text-sm md:text-base">
   <span class="absolute top-3 right-5">
-    <%= link_to 'Простым текстом', {format: 'text'},
+    <%= link_to t('.raw'), {format: 'text'},
       class: 'btn btn-amber opacity-25 group-hover:opacity-75' %>
     <%= link_to '📋', '', data: {clipboard_text: request.original_url},
       class: 'js-clipboard btn btn-amber opacity-25 group-hover:opacity-75',
-      title: 'Скопировать ссылку на эту страницу' %>
+      title: t('.copy_url') %>
   </span>
 
   <div class="grow px-5 py-3 bg-slate-700 overflow-x-auto">
