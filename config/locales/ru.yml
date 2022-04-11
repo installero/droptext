@@ -2,7 +2,7 @@ ru:
   activerecord:
     enums:
       snippet:
-        markdowns:
+        languages:
           apache: Apache
           auto: Автоматическое определение языка
           bash: Bash

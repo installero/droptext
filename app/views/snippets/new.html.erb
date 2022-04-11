@@ -10,7 +10,7 @@
       font-mono focus:border-gray-800 focus:outline-none transition duration-150
       ease-in-out grow' %>
 
-    <%= form.select :markdown, enum_options_for_select(@snippet.class, :markdown), { selected: 'auto' }, { data: { no_results: t('.no_results'), item_select: t('.item_select'), locale: locale } } %>
+    <%= form.select :language, enum_options_for_select(@snippet.class, :language), { selected: 'auto' }, { data: { no_results: t('.no_results'), item_select: t('.item_select'), locale: locale } } %>
   <% end %>
 
   <div class="mt-5" data-controller="snippets">

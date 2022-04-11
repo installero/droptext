@@ -1,5 +1,5 @@
 class Snippet < ApplicationRecord
-  enum markdown: {
+  enum language: {
     auto: 'auto',
     apache: 'apache',
     bash: 'bash',
