@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import choices.js;
 
 .btn {
   @apply inline-block px-6 py-2.5;
@@ -29,11 +30,36 @@
   @apply active:bg-red-800 active:shadow-lg;
 }
 
-.choices {
-  @apply text-slate-700;
-}
-
+/* Choices selector styles override */
 .choices__inner,
 .choices__list {
-  @apply bg-slate-900 rounded-none;
+  @apply bg-slate-900;
+  @apply border-gray-700;
+  border-radius: 0 !important;
+}
+
+/* Choices input, focused state */
+.is-focused .choices__inner,
+.is-open .choices__inner {
+  @apply border-gray-500;
+}
+
+/* Dropdown list, opened state */
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+  @apply border-gray-500;
+}
+
+/* Input in dropdown list */
+.choices[data-type*="select-one"] .choices__input {
+  @apply bg-slate-700;
+  @apply border-b-gray-700;
+  @apply text-slate-200;
+}
+
+/* Highlighed item in dropdown list */
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  @apply bg-slate-500;
+  @apply text-slate-900;
 }
