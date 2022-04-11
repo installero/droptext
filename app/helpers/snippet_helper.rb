@@ -1,5 +1,5 @@
 module SnippetHelper
-  def markdown_class(snippet)
-    "language-#{snippet.markdown}" unless snippet.auto_markdown?
+  def language_class(snippet)
+    "language-#{snippet.language}" unless snippet.auto_language?
   end
 end

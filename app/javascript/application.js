@@ -14,13 +14,13 @@ document.addEventListener('turbo:load', (event) => {
     }
   })
 
-  const markdownSelect = document.querySelector('#snippet_markdown')
+  const languageSelect = document.querySelector('#snippet_language')
 
-  if (markdownSelect) {
-    new Choices(markdownSelect, {
-      noResultsText: markdownSelect.dataset.noResults,
-      itemSelectText: markdownSelect.dataset.itemSelect,
-      sorter: (a, b) => new Intl.Collator(markdownSelect.dataset.locale).compare(a.label, b.label),
+  if (languageSelect) {
+    new Choices(languageSelect, {
+      noResultsText: languageSelect.dataset.noResults,
+      itemSelectText: languageSelect.dataset.itemSelect,
+      sorter: (a, b) => new Intl.Collator(languageSelect.dataset.locale).compare(a.label, b.label),
     })
   }
 })

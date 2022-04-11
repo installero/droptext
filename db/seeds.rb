@@ -1,13 +1,13 @@
 pages =
   [
-    { filename: 'README.md', markdown: :markdown, token: 'about' },
-    { filename: 'disclamer.md', markdown: :markdown, token: 'disclamer' }
+    { filename: 'README.md', language: :markdown, token: 'about' },
+    { filename: 'disclamer.md', language: :markdown, token: 'disclamer' }
   ]
 
 pages.each do |page|
-  page => { filename:, markdown:, token: }
+  page => { filename:, language:, token: }
   file_path = Rails.root.join(filename)
   content = File.read(file_path)
   snippet = Snippet.find_or_create_by!(token: token)
-  snippet.update(body: content, markdown: markdown)
+  snippet.update(body: content, language: language)
 end
