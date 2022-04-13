@@ -2,9 +2,10 @@
 
 git pull &&
 bundle install &&
-RAILS_ENV=production bundle exec rails db:migrate &&
-RAILS_ENV=production bundle exec rails assets:precompile &&
 yarn install &&
 yarn build &&
+yarn build:css &&
+RAILS_ENV=production bundle exec rails db:migrate &&
+RAILS_ENV=production bundle exec rails assets:precompile &&
 bundle exec whenever --update-crontab &&
 touch tmp/restart.txt
