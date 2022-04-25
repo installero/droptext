@@ -4,7 +4,7 @@ require 'dotenv/load'
 namespace :telegram_bot do
   desc "Sends a message, containing new posted snippets"
   task notify_about_new_snippets: :environment do
-    last_snippets = Snippet.where('created_at > ?', 12.hours.ago)
+    last_snippets = Snippet.where('created_at > ?', 24.hours.ago)
 
     exit if last_snippets.empty?
 
