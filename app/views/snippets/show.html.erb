@@ -1,12 +1,14 @@
-<div class="relative flex h-full group text-sm md:text-base">
-  <span class="absolute top-3 right-5">
+<% content_for :header do %>
+  <span>
     <%= link_to t('.raw'), {format: 'text'},
-      class: 'btn btn-amber opacity-25 group-hover:opacity-75' %>
+      class: 'btn btn-amber group-hover:opacity-75' %>
     <%= link_to '📋', '', data: {clipboard_text: request.original_url},
-      class: 'js-clipboard btn btn-amber opacity-25 group-hover:opacity-75',
+      class: 'js-clipboard btn btn-amber group-hover:opacity-75',
       title: t('.copy_url') %>
   </span>
+<% end %>
 
+<div class="relative flex h-full group text-sm md:text-base">
   <div class="grow px-5 py-3 bg-slate-700 overflow-x-auto">
     <pre><code class="whitespace-pre-wrap <%= language_class(@snippet) %>"><%= h(@snippet.body) %></code></pre>
   </div>
