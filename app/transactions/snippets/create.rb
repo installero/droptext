@@ -1,11 +1,27 @@
 module Snippets
   class Create < BaseTransaction
     TOKEN_LENGHT = 3
-    UNSAFE_WORDS = %w[password token key secret mnemonic пароль]
+    MINIMUM_RECAPTCHA_SCORE = 0.75
+    BASE_REACAPTCHA_URL = 'https://www.google.com/recaptcha/api/siteverify'.freeze
 
+    step :check_recaptcha
     step :validate
-    step :check_unsafe_words
     step :persist
+
+    def check_recaptcha(input)
+      secret_key = ENV['RECAPTCHA_SECRET_KEY']
+      token = CGI.escape(input.dig(:params, :snippet)&.delete(:recaptcha_token).to_s)
+
+      recaptcha_url = URI.parse(BASE_REACAPTCHA_URL)
+      recaptcha_url.query = { secret: secret_key, response: token}.to_query
+
+      response = HTTParty.get(recaptcha_url)
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      return Success(input) if json[:success] && json[:score] >= MINIMUM_RECAPTCHA_SCORE && json[:action] == 'callback'
+
+      Failure(errors: [I18n.t('recaptcha.error')])
+    end
 
     def validate(input)
       validation = SnippetSchema.(input.dig(:params, :snippet))
@@ -16,19 +32,6 @@ module Snippets
         Success(input)
       else
         Failure(errors: validation.errors.to_h.values.flatten)
-      end
-    end
-
-    def check_unsafe_words(input)
-      return Success(input) if input[:params][:skip_check_unsafe_words].present?
-
-      unsafe_words =
-        input[:params][:snippet][:body].downcase.scan(%r{#{UNSAFE_WORDS.join('|')}}).uniq
-
-      if unsafe_words.empty?
-        Success(input)
-      else
-        Failure(unsafe_words: unsafe_words)
       end
     end
 

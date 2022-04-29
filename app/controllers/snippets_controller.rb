@@ -1,12 +1,12 @@
 class SnippetsController < ApplicationController
   def create
     Snippets::Create.(params: params.permit!.to_h) do |m|
-      m.failure :validate do |validation_errors|
-        render json: validation_errors
+      m.failure :check_recaptcha do |recaptcha_errors|
+        render json: recaptcha_errors
       end
 
-      m.failure :check_unsafe_words do |unsafe_words|
-        render json: unsafe_words
+      m.failure :validate do |validation_errors|
+        render json: validation_errors
       end
 
       m.success do |token|
