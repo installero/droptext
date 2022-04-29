@@ -5,7 +5,7 @@
 
         <div class="relative flex-auto select-none text-sm">
           <% unsafe_word_tag = content_tag('span', '', id: 'unsafe-words', class: 'font-bold') %>
-          <%== t('.warning', span_tag: unsafe_word_tag) %>
+          <%= sanitize t('.warning', span_tag: unsafe_word_tag), tags: %w[span p], attributes: %w[id class] %>
         </div>
 
         <div class="flex items-center justify-begin mt-5 border-solid border-slate-200 rounded-b" data-controller="snippets">

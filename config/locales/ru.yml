@@ -70,6 +70,8 @@ ru:
     application:
       about: Что это?
       disclaimer: Дисклеймер
+  recaptcha:
+    error: Хм, похоже, что вы робот
   snippets:
     new:
       item_select: Нажмите для выбора
