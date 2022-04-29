@@ -5,7 +5,7 @@ ruby '3.0.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails', '~> 1.1'
-gem 'dotenv'
+gem 'dotenv-rails', '~> 2.7'
 gem 'dry-transaction', '~> 0.13.3'
 gem 'dry-validation', '~> 1.8'
 gem 'puma', '~> 5.0'
