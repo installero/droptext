@@ -1,7 +1,7 @@
 module Snippets
   class Create < BaseTransaction
     TOKEN_LENGHT = 3
-    UNSAFE_WORDS = %w[password token пароль]
+    UNSAFE_WORDS = %w[password token key secret mnemonic пароль]
 
     step :validate
     step :check_unsafe_words
