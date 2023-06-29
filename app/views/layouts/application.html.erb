@@ -32,7 +32,7 @@
       <footer class="text-slate-700 pt-6 pb-10 text-sm flex justify-between">
         <%= link_to t('.about'), snippet_path(token: 'about') %>
         <%= link_to t('.disclaimer'), snippet_path(token: 'disclamer') %>
-        <span>© 2022</span>
+        <span>© 2022 — <%= Time.now.year %></span>
       </footer>
     </main>
   </body>
