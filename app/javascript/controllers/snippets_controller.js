@@ -5,23 +5,10 @@ export default class extends Controller {
     this.form = document.querySelector('#snippet_form')
     this.modal = document.querySelector('#unsafe-modal-confirm')
     this.backdrop = document.querySelector('#unsafe-modal-backdrop')
-    this.flashContainer = document.querySelector('#flash-container')
-    this.flashText = document.querySelector('#flash-text')
-    this.UNSAFE_WORDS = ['password', 'token', 'key', 'secret', 'mnemonic', 'пароль']
   }
 
-  async submitForm(checkUnsafeWords = true) {
+  async submitForm() {
     const formData = new FormData(this.form)
-
-    if (checkUnsafeWords) {
-      const unsafeWord =
-        new RegExp(this.UNSAFE_WORDS.join('|')).exec(formData.get('snippet[body]'))?.shift()
-
-      if (unsafeWord) {
-        document.querySelector('#unsafe-words').innerHTML = unsafeWord
-        return this.toggleUnsafeConfirmModal()
-      }
-    }
 
     const response =
       await fetch(this.form.action, {
@@ -30,23 +17,16 @@ export default class extends Controller {
       })
 
     const json = await response.json()
-    const { token, errors } = json
+    const unsafe_words = json.unsafe_words
+    const token = json.token
+
+    if (unsafe_words && !token) {
+      document.querySelector('#unsafe-words').innerHTML = unsafe_words[0]
+      this.toggleUnsafeConfirmModal()
+    }
 
     if (token) {
       window.location.href = `/s/${encodeURIComponent(token)}`
-    }
-
-    if (errors) {
-      this.flashContainer.classList.remove('hidden')
-      this.flashText.innerHTML = errors[0]
-
-      setTimeout(
-        () => {
-          this.flashContainer.classList.add('hidden')
-          this.flashText.innerHTML = ''
-        },
-        2500
-      )
     }
   }
 
@@ -58,7 +38,16 @@ export default class extends Controller {
   }
 
   unsafeSnippetSubmitForm() {
+    const unsafeConfirmInput = document.createElement('input')
+
+    Object.assign(unsafeConfirmInput, {
+      type: 'hidden',
+      value: true,
+      name: 'skip_check_unsafe_words'
+    })
+
+    this.form.appendChild(unsafeConfirmInput)
     this.toggleUnsafeConfirmModal()
-    this.submitForm(false)
+    this.submitForm()
   }
 }
