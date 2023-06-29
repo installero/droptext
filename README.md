@@ -4,7 +4,7 @@
 
 [Droptext.ru](https://droptext.ru)
 
-Альтернатива pastie.org (⚰️) и pastebin.com, только кнопку сохранения снипета видно без скролла.
+Альтернатива pastie.org и pastebin.com.
 
 # Использование
 
@@ -12,10 +12,6 @@
 
 # Внести вклад
 
-[Код проекта](https://github.com/installero/droptext) на GitHub.
+[Код проекта](https://github.com/mechnicov/droptext) на GitHub.
 
 Присылайте ваши пулреквесты.
-
-# Контакты
-
-[Вадик](https://github.com/installero/) — пишите, если что.
